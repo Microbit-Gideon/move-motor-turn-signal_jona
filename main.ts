@@ -17,14 +17,14 @@ input.onButtonPressed(Button.A, function () {
             . . # . .
             `)
         while (true) {
-            if (0 < 0) {
+            if (Check >= 3) {
                 break;
             } else if (Kitronik_Move_Motor.measure() < 30) {
                 list.push(1)
-                list.shift()
+                Check += 0 - list.shift()
             } else {
                 list.push(0)
-                list.shift()
+                Check += 0 - list.shift()
             }
         }
         moveMotorZIP.setZipLedColor(2, Kitronik_Move_Motor.rgb(255, 0, 0))
@@ -82,12 +82,12 @@ input.onButtonPressed(Button.B, function () {
     moveMotorZIP.show()
     basic.clearScreen()
 })
+let Check = 0
 let list: number[] = []
 let moveMotorZIP: Kitronik_Move_Motor.MoveMotorZIP = null
 moveMotorZIP = Kitronik_Move_Motor.createMoveMotorZIPLED(4)
-let Triple_check = 0
-let Distance = 1
 list = [0, 0, 0, 0, 0]
+Check = 0
 moveMotorZIP.clear()
 moveMotorZIP.setZipLedColor(0, Kitronik_Move_Motor.colors(Kitronik_Move_Motor.ZipLedColors.White))
 moveMotorZIP.setZipLedColor(1, Kitronik_Move_Motor.colors(Kitronik_Move_Motor.ZipLedColors.White))
